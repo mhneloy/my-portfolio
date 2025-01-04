@@ -6,7 +6,7 @@ const Navbar = () => {
       <Container>
         <div className="flex justify-between items-center py-4">
           <h1 className="text-2xl font-bold text-blue-500">
-            Nuzhat&apos;s Portfolio
+            MHNeloy Portfolio
           </h1>
           <nav className="flex space-x-4">
             <a href="/" className="hover:text-blue-500">

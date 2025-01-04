@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-800 text-white text-center p-4">
         <div className="container mx-auto">
-          <p>&copy; 2025 Nuzhat. All Rights Reserved.</p>
+          <p>&copy; 2025 MHNeloy. All Rights Reserved.</p>
           <div className="flex justify-center space-x-4 mt-2">
             <a
               href="https://github.com"
