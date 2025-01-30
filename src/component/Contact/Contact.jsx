@@ -4,18 +4,22 @@ import emailjs from "@emailjs/browser";
 const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const ObjectForm = Object.fromEntries(formData.entries());
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", ObjectForm, {
-        publicKey: import.meta.env.VITE_Email_public_key,
-      })
+      .sendForm(
+        import.meta.env.VITE_service_id,
+        import.meta.env.VITE_Email_Template_id,
+        e.target,
+        {
+          publicKey: import.meta.env.VITE_Email_public_key,
+        }
+      )
       .then(
         (result) => {
           console.log("Message sent successfully:", result.text);
+          e.target.reset();
         },
         (error) => {
-          console.error("Error sending message:", error.text);
+          console.error(error);
         }
       );
   };
@@ -27,19 +31,19 @@ const Contact = () => {
           <form onSubmit={sendEmail} className="flex w-1/2 flex-col space-y-4">
             <input
               type="text"
-              name="name"
+              name="from_name"
               placeholder="Your Name"
               className="input input-bordered"
             />
             <input
               type="email"
-              name="email"
+              name="to_name"
               placeholder="Your Email"
               className="input input-bordered"
             />
             <textarea
               placeholder="Your Message"
-              name="textarea"
+              name="message"
               className="textarea textarea-bordered"
               rows="5"
             ></textarea>
