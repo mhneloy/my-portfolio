@@ -3,26 +3,28 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, SpotLight, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import PropTypes from "prop-types";
 
-const Computers = () => {
+const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={3} groundColor="black" />
-      <pointLight intensity={1} position={[10, 10, 10]} />
+      {/* Optimized lighting for better mobile performance */}
+      <ambientLight intensity={2.5} />
       <SpotLight
-        position={[10, 70, 50]}
-        angle={0.12}
+        position={[10, 50, 50]}
+        angle={0.2}
         penumbra={1}
-        intensity={5}
+        intensity={isMobile ? 3 : 5} // Reduce light intensity on mobile
         castShadow
-        shadow-mapsize={1024}
+        shadow-mapSize-width={512} // Lower shadow resolution for performance
+        shadow-mapSize-height={512}
       />
       <primitive
         object={computer.scene}
-        scale={0.9}
-        position={[1, -3, -1]}
+        scale={isMobile ? 0.6 : 0.9} // Adjust size for mobile
+        position={isMobile ? [0, -2.5, -2] : [1, -3, -1]}
         rotation={[-0.01, 0, -0.1]}
       />
     </mesh>
@@ -30,85 +32,42 @@ const Computers = () => {
 };
 
 const ComputersCanvas = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const updateSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [isMobile]);
+
   return (
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 1], fov: 27 }}
+      camera={{
+        position: isMobile ? [5, 2, 5] : [22, 3, 1], // Adjust camera for mobile
+        fov: isMobile ? 40 : 27, // Increase FOV slightly for mobile
+      }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
-          maxPolarAngle={Math.PI / 2.2}
-          minPolarAngle={Math.PI / 2.2}
+          maxPolarAngle={Math.PI / 2.1}
+          minPolarAngle={Math.PI / 2.3} // More restricted rotation on mobile
         />
-        <Computers />
+        <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
-// const Computers = ({ isMobile }) => {
-//   const computer = useGLTF("./desktop_pc/scene.gltf");
-//   return (
-//     <mesh>
-//       <hemisphereLight intensity={0.15} groundColor="black" />
-//       <spotLight
-//         position={[-20, 50, 10]}
-//         angle={0.12}
-//         penumbra={1}
-//         intensity={1}
-//         castShadow
-//         shadow-mapSize={1024}
-//       />
-//       <pointLight intensity={1} />
-//       <primitive
-//         object={computer.scene}
-//         scale={isMobile ? 0.7 : 0.75}
-//         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-//         rotation={[-0.01, -0.2, -0.1]}
-//       />
-//     </mesh>
-//   );
-// };
-// const ComputersCanvas = () => {
-//   const [isMobile, setIsMobile] = useState(false);
-// useEffect(() => {
-// Add a listener for changes to the screen size
-// const mediaQuery = window.matchMedia("(max-width: 500px)");
-// Set the initial value of the `isMobile` state variable
-// setIsMobile(mediaQuery.matches);
-// Define a callback function to handle changes to the media query
-// const handleMediaQueryChange = (event) => {
-//   setIsMobile(event.matches);
-// };
-// Add the callback function as a listener for changes to the media query
-// mediaQuery.addEventListener("change", handleMediaQueryChange);
-// Remove the listener when the component is unmounted
-//   return () => {
-//     mediaQuery.removeEventListener("change", handleMediaQueryChange);
-//   };
-// }, []);
-// return (
-//   <Canvas
-//     frameloop="demand"
-//     shadows
-//     dpr={[1, 2]}
-//     camera={{ position: [20, 3, 5], fov: 25 }}
-//     gl={{ preserveDrawingBuffer: true }}
-//   >
-//     <Suspense fallback={<CanvasLoader />}>
-//       <OrbitControls
-//         enableZoom={false}
-//         maxPolarAngle={Math.PI / 2}
-//         minPolarAngle={Math.PI / 2}
-//       />
-//       <Computers isMobile={isMobile} />
-//     </Suspense>
-//     <Preload all />
-//   </Canvas>
-// );
-// };
 
 export default ComputersCanvas;
+
+Computers.propTypes = {
+  isMobile: PropTypes.bool,
+};
