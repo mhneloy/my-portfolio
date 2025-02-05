@@ -6,6 +6,7 @@ import { fadeIn } from "../../utils/motion";
 import { Tilt } from "react-tilt";
 import Container from "../../ShareComponent/Container/Container";
 import PropTypes from "prop-types";
+import neloy from "../../assets/neloy.png";
 
 const ServiceCard = ({ index, icon, title }) => {
   return (
@@ -39,18 +40,34 @@ const About = () => {
           <FaNodeJs className="text-green-500 text-3xl" />
           <FaDatabase className="text-yellow-500 text-3xl" />
         </div> */}
-        <motion.p
-          variants={fadeIn("", "", 0.2, 0.75)} //first direction, type, delay, duration
-        >
-          I&apos;m a skilled software developer with experience in TypeScript
-          and JavaScript, and experstise in frameworks like React, Node.js, and
-          Three.js. I&apos;m a quick learner and collaborate closely with
-          clients to create efficient, scalable, and user-friendly solutions
-          that solve real-world problems. Let&apos;s work together to bring your
-          ideas to life!
-        </motion.p>
+        <div className="flex flex-wrap justify-between mt-5">
+          <div className="w-full md:w-[50%] flex flex-col items-center justify-center">
+            <motion.p
+              variants={fadeIn("", "", 0.2, 0.75)} //first direction, type, delay, duration
+              className="w-[70%] text-secondary font-semibold text-xl"
+            >
+              I&apos;m a skilled software developer with experience in
+              TypeScript and JavaScript, and experstise in frameworks like
+              React, Node.js, and Three.js. I&apos;m a quick learner and
+              collaborate closely with clients to create efficient, scalable,
+              and user-friendly solutions that solve real-world problems.
+              Let&apos;s work together to bring your ideas to life!
+            </motion.p>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB
+"
+              className="btn mt-5"
+              download
+            >
+              DownLoad Resume
+            </a>
+          </div>
+          <div className="w-full md:w-[50%] flex justify-center">
+            <img src={neloy} alt="neloy" />
+          </div>
+        </div>
 
-        <div className="mt-20 flex flex-wrap gap-10">
+        <div className="mt-20 flex flex-wrap justify-center items-center gap-6">
           {services.map((service, idx) => {
             return <ServiceCard key={idx} {...service} />;
           })}

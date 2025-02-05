@@ -17,10 +17,10 @@ const MySkill = () => {
         pauseOnHover="true"
         className="w-full"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+        <div className=" flex gap-5 w-full">
           {/* React */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
+            <figure className="flex-1 px-10 pt-10">
               <FaReact className="text-blue-500 text-6xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -28,8 +28,8 @@ const MySkill = () => {
             </div>
           </div>
           {/* Node.js */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
+            <figure className="flex-1 px-10 pt-10">
               <FaNode className="text-green-500 text-6xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -37,17 +37,21 @@ const MySkill = () => {
             </div>
           </div>
           {/* MongoDB */}
-          <div className="card bg-base-100 w-96 shadow-xl">
+          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
             <figure className="px-10 pt-10">
-              <img src={mongodb} className="w-24 h-24" alt="MongoDB Logo" />
+              <img
+                src={mongodb}
+                className="flex-1 w-24 h-24"
+                alt="MongoDB Logo"
+              />
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">MongoDB</h2>
             </div>
           </div>
           {/* Firebase */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card bg-base-100 w-full md:w-96 shadow-xl mr-5">
+            <figure className="flex-1 px-10 pt-10">
               <img src={firebase} className="w-24 h-24" alt="Firebase Logo" />
             </figure>
             <div className="card-body items-center text-center">
@@ -69,8 +73,8 @@ const MySkill = () => {
       >
         <div className="flex gap-5 w-full">
           {/* HTML */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+            <figure className=" flex-1 px-10 pt-10">
               <FaHtml5 className="text-orange-500 text-6xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -78,8 +82,8 @@ const MySkill = () => {
             </div>
           </div>
           {/* CSS3 */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+            <figure className="flex-1 px-10 pt-10">
               <FaCss3 className="text-blue-400 text-6xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -87,8 +91,8 @@ const MySkill = () => {
             </div>
           </div>
           {/* JavaScript */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+            <figure className=" flex-1 px-10 pt-10">
               <FaJsSquare className="text-yellow-500 text-6xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -96,8 +100,8 @@ const MySkill = () => {
             </div>
           </div>
           {/* Firebase */}
-          <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card  bg-base-100 w-full md:w-96 shadow-xl mr-5">
+            <figure className="flex-1 px-10 pt-10">
               <img
                 src={express}
                 className="text-green-500 w-24 h-24"

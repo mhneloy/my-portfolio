@@ -217,6 +217,7 @@ const projects = [
     ],
     image: carrent,
     source_code_link: "https://github.com/",
+    live_link: "https://smart-learning-710c0.web.app/",
   },
   {
     name: "Job IT",
@@ -238,6 +239,7 @@ const projects = [
     ],
     image: jobit,
     source_code_link: "https://github.com/",
+    live_link: "https://marathon-guide.web.app/",
   },
   {
     name: "Trip Guide",
@@ -259,6 +261,7 @@ const projects = [
     ],
     image: tripguide,
     source_code_link: "https://github.com/",
+    live_link: "https://dream-crowd-1e8a7.web.app/",
   },
 ];
 
