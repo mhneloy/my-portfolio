@@ -17,7 +17,7 @@ const MySkill = () => {
         pauseOnHover="true"
         className="w-full"
       >
-        <div className="flex gap-5 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
           {/* React */}
           <div className="card bg-base-100 w-96 shadow-xl">
             <figure className="px-10 pt-10">
