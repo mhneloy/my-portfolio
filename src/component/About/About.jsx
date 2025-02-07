@@ -41,17 +41,24 @@ const About = () => {
           <FaDatabase className="text-yellow-500 text-3xl" />
         </div> */}
         <div className="flex flex-wrap justify-between mt-5">
-          <div className="w-full md:w-[50%] flex flex-col items-center justify-center">
+          <div className="w-full md:w-[70%] flex flex-col items-start justify-center">
             <motion.p
               variants={fadeIn("", "", 0.2, 0.75)} //first direction, type, delay, duration
               className="w-[70%] text-secondary font-semibold text-xl"
             >
-              I&apos;m a skilled software developer with experience in
-              TypeScript and JavaScript, and experstise in frameworks like
-              React, Node.js, and Three.js. I&apos;m a quick learner and
-              collaborate closely with clients to create efficient, scalable,
-              and user-friendly solutions that solve real-world problems.
-              Let&apos;s work together to bring your ideas to life!
+              Hi, I&apos;m Md Mahmudul Hassan, a dedicated MERN Stack Developer
+              with a strong foundation in Computer Science and Engineering
+              (CSE). I am passionate about building high-performance, scalable,
+              and user-friendly web applications using MongoDB, Express.js,
+              React, and Node.js. I love solving complex problems, writing clean
+              and efficient code, and creating seamless user experiences. My
+              approach to development focuses on scalability, best practices,
+              and performance optimization. Always eager to learn new
+              technologies and collaborate, I thrive in dynamic environments
+              where innovation and creativity drive success. I am actively
+              looking for opportunities to work on exciting projects and
+              contribute to meaningful solutions. Let’s connect and build
+              something impactful together!
             </motion.p>
             <a
               href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB
@@ -62,7 +69,7 @@ const About = () => {
               DownLoad Resume
             </a>
           </div>
-          <div className="w-full md:w-[50%] flex justify-center">
+          <div className="w-full md:w-[30%] flex justify-center">
             <img src={neloy} alt="neloy" />
           </div>
         </div>

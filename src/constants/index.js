@@ -198,9 +198,10 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    id: 101001,
+    name: "SmartLearning",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "SmartLearning is an innovative platform designed to enhance learning experiences through interactive courses, personalized study materials, and a collaborative community of learners and educators.",
     tags: [
       {
         name: "react",
@@ -215,52 +216,54 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    technologies: {
+      Front_end: "React, React Router, Tailwind CSS, DaisyUI",
+      State_Management: "@tanstack/react-query, Axios",
+      Animations: "AOS, Lottie React",
+      Authentication: "Firebase",
+      Date_Management: "date-fns",
+      Payment: "Stripe",
+    },
+    image: "https://i.ibb.co.com/nqZMG5Zq/photo-collage-png-1.png",
+    source_code_link: "https://github.com/md-neloy/B10A12-client",
     live_link: "https://smart-learning-710c0.web.app/",
   },
   {
-    name: "Job IT",
+    id: 101002,
+    name: "Marathon-GuideLine",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
+      "Marathon-GuideLine is a comprehensive platform designed for organizing and managing marathon events. It serves both event organizers and participants, streamlining the process of creating, registering, and participating in marathon events.",
+    technologies: {
+      Front_end: "React, React Router, Tailwind CSS, DaisyUI",
+      State_Management: "@tanstack/react-query, Axios",
+      Animations: "Framer Motion, AOS, Lottie React",
+      Authentication: "Firebase",
+      Date_Management: "date-fns",
+      Payment: "N/A",
+      Notifications: "React Toastify, SweetAlert2",
+      Others: "Swiper, React Icons, React Helmet Async",
+    },
     image: jobit,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/md-neloy/B10A11-client",
     live_link: "https://marathon-guide.web.app/",
   },
   {
-    name: "Trip Guide",
+    id: 101003,
+    name: "Dream Crowd",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
+      "A crowdfunding platform where individuals can raise money for various projects, ideas, or causes by inviting others to contribute financially.",
+    technologies: {
+      Front_end: "React, React Router, Tailwind CSS, DaisyUI",
+      State_Management: "Axios",
+      Animations: "Lottie React",
+      Authentication: "Firebase",
+      Date_Management: "date-fns",
+      Payment: "N/A",
+      Notifications: "React Toastify, SweetAlert2",
+      Others: "Swiper, React Icons",
+    },
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/md-neloy/B10A10",
     live_link: "https://dream-crowd-1e8a7.web.app/",
   },
 ];

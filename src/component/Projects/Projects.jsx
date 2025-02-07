@@ -8,54 +8,71 @@ import { fadeIn } from "../../utils/motion";
 import { textVariant } from "../../utils/motion";
 import Container from "../../ShareComponent/Container/Container";
 import PropTypes from "prop-types";
-import { image } from "framer-motion/client";
+// import { image } from "framer-motion/client";
+import { useState } from "react";
+import Modal from "../../ShareComponent/modal/Modal";
 // import ProjectCard from "../ProjectCard/ProjectCard";
 
 const ProjectCard = ({ project, index }) => {
-  const { tags, name, image, description, source_code_link, live_link } =
+  const [openModal, setOpenModal] = useState(null);
+  const { id, tags, name, image, description, source_code_link, live_link } =
     project;
+  const handleOpenModal = (id) => {
+    setOpenModal(id);
+  };
+  const closeModal = () => {
+    setOpenModal(null);
+  };
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary p-5 rounded-2xl  w-full"
-      >
-        <div className="relative w-full ">
-          <img
-            src={image}
-            alt=""
-            className="w-full h-64 md:h-96  rounded-2xl"
-          />
-          <div className="absolute top-5 right-5">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient  flex justify-center items-center w-10 h-10  rounded-full hover:cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+    <>
+      <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+        <Tilt
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+          className="bg-tertiary p-5 rounded-2xl  w-full"
+        >
+          <div className="relative w-full ">
+            <img
+              src={image}
+              alt=""
+              className="w-full h-64 md:h-96  rounded-2xl"
+            />
+            <div className="absolute top-5 right-5">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient  flex justify-center items-center w-10 h-10  rounded-full hover:cursor-pointer"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <h3>{name}</h3>
+              <p>{description}</p>
+              <div className="flex flex-start items-center gap-5 mt-3">
+                <button className="btn" onClick={() => handleOpenModal(id)}>
+                  View Details
+                </button>
+                <button
+                  className="btn"
+                  onClick={() => window.open(live_link, "_blank")}
+                >
+                  Live Project
+                </button>
+              </div>
             </div>
           </div>
-
-          <div className="mt-5">
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <button
-              className="btn mt-3"
-              onClick={() => window.open(live_link, "_blank")}
-            >
-              view Project
-            </button>
-          </div>
-        </div>
-      </Tilt>
-    </motion.div>
+        </Tilt>
+        {openModal && <Modal projectId={openModal} closeModal={closeModal} />}
+      </motion.div>
+    </>
   );
 };
 
