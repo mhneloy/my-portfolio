@@ -24,8 +24,8 @@ const Contact = () => {
       );
   };
   return (
-    <Container>
-      <section className=" p-8">
+    <section className=" p-8" id="contact">
+      <Container>
         <SectionTitle title={"Contact Me"} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
@@ -91,8 +91,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 };
 

@@ -10,6 +10,8 @@ import { textVariant } from "../../utils/motion";
 import Container from "../../ShareComponent/Container/Container";
 import SectionTitle from "../../ShareComponent/SectionTitle/SectionTitle";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -36,20 +38,26 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { experienceRef } = useContext(AuthContext);
   return (
-    <Container>
-      <motion.div variants={textVariant()}>
-        <SectionTitle title={"Experience"} subTitle="What I have done so far" />
-      </motion.div>
+    <section id="experience" ref={experienceRef} className="mt-8">
+      <Container>
+        <motion.div variants={textVariant()}>
+          <SectionTitle
+            title={"Experience"}
+            subTitle="What I have done so far"
+          />
+        </motion.div>
 
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => {
-            return <ExperienceCard key={index} experience={experience} />;
-          })}
-        </VerticalTimeline>
-      </div>
-    </Container>
+        <div className="mt-20 flex flex-col">
+          <VerticalTimeline>
+            {experiences.map((experience, index) => {
+              return <ExperienceCard key={index} experience={experience} />;
+            })}
+          </VerticalTimeline>
+        </div>
+      </Container>
+    </section>
   );
 };
 

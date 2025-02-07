@@ -1,13 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import Container from "../Container/Container";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { menu, close, brandLogo } from "../../assets";
+import { AuthContext } from "../AuthContext/ContextProvider";
 
 const Navbar = () => {
+  const { aboutRef, experienceRef, projectRef } = useContext(AuthContext);
   const [Active, setActive] = useState();
   const [toggle, setToggle] = useState(false);
-  useEffect(() => {}, []);
+  const handleScroll = (section) => {
+    section.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className={`bg-transparent shadow-md sticky top-0 z-50 py-4 w-full`}>
       <Container>
@@ -17,54 +21,84 @@ const Navbar = () => {
               <img src={brandLogo} alt="" className="w-40 md:w-60" />
             </div>
           </Link>
-          <ul className="hidden sm:flex space-x-4">
+          <ul className="hidden sm:flex space-x-4 items-center">
             <li>
               <NavLink
                 to="/"
                 className={`hover:text-white text-[18px] ${(isActive) =>
                   isActive ? "text-white" : "text-secondary"}`}
-                onClick={() => {
-                  setActive("Home");
-                }}
               >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/about"
-                className={`hover:text-white text-[18px] ${(isActive) =>
-                  isActive ? "text-white" : "text-secondary"}`}
-                onClick={() => {
-                  setActive("About");
-                }}
+              <a
+                className={`hover:text-white text-[18px] cursor-pointer ${(
+                  isActive
+                ) => (isActive ? "text-white" : "text-secondary")}`}
+                onClick={() => handleScroll(aboutRef)}
               >
                 About
-              </NavLink>
+              </a>
+            </li>
+            <li>
+              <a
+                className={`hover:text-white text-[18px] cursor-pointer ${(
+                  isActive
+                ) => (isActive ? "text-white" : "text-secondary")}`}
+                onClick={() => handleScroll(experienceRef)}
+              >
+                Experience
+              </a>
+            </li>
+            <li>
+              <a
+                className={`hover:text-white text-[18px] cursor-pointer ${(
+                  isActive
+                ) => (isActive ? "text-white" : "text-secondary")}`}
+                onClick={() =>
+                  document
+                    .getElementById("myskill")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                My Skill
+              </a>
             </li>
             <li>
               <NavLink
-                to="/projects"
                 className={`hover:text-white text-[18px] ${(isActive) =>
                   isActive ? "text-white" : "text-secondary"}`}
-                onClick={() => {
-                  setActive("Projects");
-                }}
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Projects
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/contact"
                 className={`hover:text-white text-[18px] ${(isActive) =>
                   isActive ? "text-white" : "text-secondary"}`}
-                onClick={() => {
-                  setActive("Contact");
-                }}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Contact
               </NavLink>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB"
+                download
+                className="btn"
+              >
+                Download Resume
+              </a>
             </li>
           </ul>
           {/* mobile view */}
@@ -86,23 +120,30 @@ const Navbar = () => {
                     to="/"
                     className={`hover:text-white text-[18px] ${(isActive) =>
                       isActive ? "text-white" : "text-secondary"}`}
-                    onClick={() => {
-                      setActive("Home");
-                      setToggle(!toggle);
-                    }}
+                    onClick={() =>
+                      document
+                        .getElementById("home")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Home
                   </NavLink>
                 </li>
                 <li>
+                  {() =>
+                    document
+                      .getElementById("myskill")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
                   <NavLink
                     // to="/about"
                     className={`hover:text-white text-[18px] ${(isActive) =>
                       isActive ? "text-white" : "text-secondary"}`}
-                    onClick={() => {
-                      setActive("About");
-                      setToggle(!toggle);
-                    }}
+                    onClick={() =>
+                      document
+                        .getElementById("about")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     About
                   </NavLink>
@@ -112,10 +153,39 @@ const Navbar = () => {
                     // to="/projects"
                     className={`hover:text-white text-[18px] ${(isActive) =>
                       isActive ? "text-white" : "text-secondary"}`}
-                    onClick={() => {
-                      setActive("Projects");
-                      setToggle(!toggle);
-                    }}
+                    onClick={() =>
+                      document
+                        .getElementById("experience")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    Experience
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    // to="/projects"
+                    className={`hover:text-white text-[18px] ${(isActive) =>
+                      isActive ? "text-white" : "text-secondary"}`}
+                    onClick={() =>
+                      document
+                        .getElementById("myskill")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
+                    My Skill
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    // to="/projects"
+                    className={`hover:text-white text-[18px] ${(isActive) =>
+                      isActive ? "text-white" : "text-secondary"}`}
+                    onClick={() =>
+                      document
+                        .getElementById("projects")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Projects
                   </NavLink>
@@ -125,13 +195,23 @@ const Navbar = () => {
                     // to="/contact"
                     className={`hover:text-white text-[18px] ${(isActive) =>
                       isActive ? "text-white" : "text-secondary"}`}
-                    onClick={() => {
-                      setActive("Contact");
-                      setToggle(!toggle);
-                    }}
+                    onClick={() =>
+                      document
+                        .getElementById("contact")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                   >
                     Contact
                   </NavLink>
+                </li>
+                <li>
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB"
+                    download
+                    className="btn"
+                  >
+                    Download Resume
+                  </a>
                 </li>
               </ul>
             </div>

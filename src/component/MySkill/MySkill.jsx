@@ -8,113 +8,114 @@ import Marquee from "react-fast-marquee";
 
 const MySkill = () => {
   return (
-    <Container>
-      <SectionTitle title={"My Skill"} />
+    <section id="myskill">
+      <Container>
+        <SectionTitle title={"My Skill"} />
 
-      <Marquee
-        speed={80}
-        direction="left"
-        pauseOnHover="true"
-        className="w-full"
-      >
-        <div className=" flex gap-5 w-full">
-          {/* React */}
-          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className="flex-1 px-10 pt-10">
-              <FaReact className="text-blue-500 text-6xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">React</h2>
+        <Marquee
+          speed={80}
+          direction="left"
+          pauseOnHover="true"
+          className="w-full"
+        >
+          <div className=" flex gap-5 w-full">
+            {/* React */}
+            <div className="card bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className="flex-1 px-10 pt-10">
+                <FaReact className="text-blue-500 text-6xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">React</h2>
+              </div>
+            </div>
+            {/* Node.js */}
+            <div className="card bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className="flex-1 px-10 pt-10">
+                <FaNode className="text-green-500 text-6xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Node.js</h2>
+              </div>
+            </div>
+            {/* MongoDB */}
+            <div className="card bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className="px-10 pt-10">
+                <img
+                  src={mongodb}
+                  className="flex-1 w-24 h-24"
+                  alt="MongoDB Logo"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">MongoDB</h2>
+              </div>
+            </div>
+            {/* Firebase */}
+            <div className="card bg-base-100 w-full md:w-96 shadow-xl mr-5">
+              <figure className="flex-1 px-10 pt-10">
+                <img src={firebase} className="w-24 h-24" alt="Firebase Logo" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Firebase</h2>
+              </div>
             </div>
           </div>
-          {/* Node.js */}
-          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className="flex-1 px-10 pt-10">
-              <FaNode className="text-green-500 text-6xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Node.js</h2>
-            </div>
-          </div>
-          {/* MongoDB */}
-          <div className="card bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className="px-10 pt-10">
-              <img
-                src={mongodb}
-                className="flex-1 w-24 h-24"
-                alt="MongoDB Logo"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">MongoDB</h2>
-            </div>
-          </div>
-          {/* Firebase */}
-          <div className="card bg-base-100 w-full md:w-96 shadow-xl mr-5">
-            <figure className="flex-1 px-10 pt-10">
-              <img src={firebase} className="w-24 h-24" alt="Firebase Logo" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Firebase</h2>
-            </div>
-          </div>
-        </div>
-      </Marquee>
-      {/* <marquee behavior="scroll" direction="left">
+        </Marquee>
+        {/* <marquee behavior="scroll" direction="left">
       </marquee> */}
 
-      {/* skill show  */}
+        {/* skill show  */}
 
-      <Marquee
-        speed={80}
-        direction="right"
-        pauseOnHover="true"
-        className="w-full mt-5"
-      >
-        <div className="flex gap-5 w-full">
-          {/* HTML */}
-          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className=" flex-1 px-10 pt-10">
-              <FaHtml5 className="text-orange-500 text-6xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">HTML</h2>
+        <Marquee
+          speed={80}
+          direction="right"
+          pauseOnHover="true"
+          className="w-full mt-5"
+        >
+          <div className="flex gap-5 w-full">
+            {/* HTML */}
+            <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className=" flex-1 px-10 pt-10">
+                <FaHtml5 className="text-orange-500 text-6xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">HTML</h2>
+              </div>
+            </div>
+            {/* CSS3 */}
+            <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className="flex-1 px-10 pt-10">
+                <FaCss3 className="text-blue-400 text-6xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">CSS3</h2>
+              </div>
+            </div>
+            {/* JavaScript */}
+            <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
+              <figure className=" flex-1 px-10 pt-10">
+                <FaJsSquare className="text-yellow-500 text-6xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">JavaScript</h2>
+              </div>
+            </div>
+            {/* Firebase */}
+            <div className="card  bg-base-100 w-full md:w-96 shadow-xl mr-5">
+              <figure className="flex-1 px-10 pt-10">
+                <img
+                  src={express}
+                  className="text-green-500 w-24 h-24"
+                  alt="Express.js Logo"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Express.js</h2>
+              </div>
             </div>
           </div>
-          {/* CSS3 */}
-          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className="flex-1 px-10 pt-10">
-              <FaCss3 className="text-blue-400 text-6xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">CSS3</h2>
-            </div>
-          </div>
-          {/* JavaScript */}
-          <div className="card  bg-base-100 w-full md:w-96 shadow-xl">
-            <figure className=" flex-1 px-10 pt-10">
-              <FaJsSquare className="text-yellow-500 text-6xl" />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">JavaScript</h2>
-            </div>
-          </div>
-          {/* Firebase */}
-          <div className="card  bg-base-100 w-full md:w-96 shadow-xl mr-5">
-            <figure className="flex-1 px-10 pt-10">
-              <img
-                src={express}
-                className="text-green-500 w-24 h-24"
-                alt="Express.js Logo"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <h2 className="card-title">Express.js</h2>
-            </div>
-          </div>
-        </div>
-      </Marquee>
-      {/* <marquee behavior="scroll" direction="right" scrollamount="20">
+        </Marquee>
+        {/* <marquee behavior="scroll" direction="right" scrollamount="20">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
           <div className="card bg-base-100 w-full shadow-xl">
             <figure className="px-10 pt-10">
@@ -156,7 +157,8 @@ const MySkill = () => {
           </div>
         </div>
       </marquee> */}
-    </Container>
+      </Container>
+    </section>
   );
 };
 

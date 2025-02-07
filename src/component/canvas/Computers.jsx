@@ -48,7 +48,7 @@ const ComputersCanvas = () => {
       frameloop="demand"
       shadows
       camera={{
-        position: isMobile ? [5, 2, 5] : [22, 3, 1], // Adjust camera for mobile
+        position: isMobile ? [5, 2, 5] : [21, 2, 2], // Adjust camera for mobile
         fov: isMobile ? 40 : 27, // Increase FOV slightly for mobile
       }}
       gl={{ preserveDrawingBuffer: true }}

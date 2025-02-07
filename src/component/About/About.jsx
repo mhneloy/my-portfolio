@@ -7,6 +7,8 @@ import { Tilt } from "react-tilt";
 import Container from "../../ShareComponent/Container/Container";
 import PropTypes from "prop-types";
 import neloy from "../../assets/neloy.png";
+import { useContext } from "react";
+import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
 
 const ServiceCard = ({ index, icon, title }) => {
   return (
@@ -26,8 +28,9 @@ const ServiceCard = ({ index, icon, title }) => {
   );
 };
 const About = () => {
+  const { aboutRef } = useContext(AuthContext);
   return (
-    <div>
+    <div id="about" ref={aboutRef}>
       <Container>
         <SectionTitle title={"About Me"} />
         {/* <p className="text-lg">
@@ -44,7 +47,7 @@ const About = () => {
           <div className="w-full md:w-[70%] flex flex-col items-start justify-center">
             <motion.p
               variants={fadeIn("", "", 0.2, 0.75)} //first direction, type, delay, duration
-              className="w-[70%] text-secondary font-semibold text-xl"
+              className="w-full md:w-[70%] text-secondary font-semibold text-xl"
             >
               Hi, I&apos;m Md Mahmudul Hassan, a dedicated MERN Stack Developer
               with a strong foundation in Computer Science and Engineering

@@ -1,7 +1,6 @@
 import SectionTitle from "../../ShareComponent/SectionTitle/SectionTitle";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { styles } from "../../styles";
 import { github } from "../../assets";
 import { projects } from "../../constants";
 import { fadeIn } from "../../utils/motion";
@@ -78,7 +77,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <div>
+    <div id="projects">
       <Container>
         <SectionTitle title={"My Project"} />
         <div className="flex justify-center items-center w-full  ">

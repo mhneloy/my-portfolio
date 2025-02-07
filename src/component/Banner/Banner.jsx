@@ -6,7 +6,7 @@ import { styles } from "../../styles";
 import { ComputersCanvas } from "../canvas";
 const Banner = () => {
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <section id="home" className="relative w-full h-screen mx-auto">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[20px]  mx-auto flex flex-row items-start gap-5 `}
       >
