@@ -59,25 +59,25 @@ const Contact = () => {
             <h3 className="text-xl font-semibold text-primary">Contact Info</h3>
             <div className="flex items-center space-x-3">
               <span className="text-gray-600">📍</span>
-              <p className="text-gray-800">123 Street Name, City, Country</p>
+              <p className="text-secondary">Kashimpur, Gazipur</p>
             </div>
             <div className="flex items-center space-x-3">
               <span className="text-gray-600">📧</span>
-              <p className="text-gray-800">your.email@example.com</p>
+              <p className="text-secondary">mhneloy708@gmail.com</p>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-gray-600">📞</span>
+              <span className="text-secondary">📞</span>
               <p className="text-gray-800">+8801933840044</p>
             </div>
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/md-mahmudul-hassan-neloy-43867a211/"
                 className="text-blue-600 hover:text-blue-800"
               >
                 LinkedIn
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/md-neloy"
                 className="text-gray-600 hover:text-gray-800"
               >
                 GitHub
