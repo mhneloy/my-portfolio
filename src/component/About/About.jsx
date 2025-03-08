@@ -47,7 +47,7 @@ const About = () => {
           <div className="w-full md:w-[70%] flex flex-col items-start justify-center">
             <motion.p
               variants={fadeIn("", "", 0.2, 0.75)} //first direction, type, delay, duration
-              className="w-full md:w-[70%] text-secondary font-semibold text-xl"
+              className="w-full md:w-[70%] text-secondary font-semibold text-xl !opacity-100"
             >
               Hi, I&apos;m Md Mahmudul Hassan, a dedicated MERN Stack Developer
               with a strong foundation in Computer Science and Engineering

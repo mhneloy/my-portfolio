@@ -27,6 +27,11 @@ const Navbar = () => {
                 to="/"
                 className={`hover:text-white text-[18px] ${(isActive) =>
                   isActive ? "text-white" : "text-secondary"}`}
+                onClick={() =>
+                  document
+                    .getElementById("home")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Home
               </NavLink>

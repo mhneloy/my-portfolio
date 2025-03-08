@@ -21,15 +21,14 @@ const Banner = () => {
             <span className="text-[#915eff]">Md Mahmudul Hassan</span>{" "}
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className="hidden sm:block" />{" "}
+            I&apos;m a MERN Developer, user <br className="hidden sm:block" />{" "}
             interfaces and web applications
           </p>
         </div>
       </div>
       <ComputersCanvas />
-
       {/* framer motion */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="hidden md:absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
           <span className="w-9 h-16 rounded-3xl border-4 border-secondary flex justify-center items-center p-2">
             <motion.div
