@@ -5,7 +5,10 @@ import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Layout = () => {
   return (
-    <div className="relative z-0 bg-primary">
+    <div className="relative  overflow-hidden bg-hero-animate-bg">
+      {/* Full-Page Lottie Background */}
+
+      {/* Social Icons Sidebar */}
       <div className="fixed top-1/2 left-0 transform -translate-y-1/2 flex flex-col space-y-4 bg-gray-800 p-2 rounded-r-lg z-50">
         <a
           href="https://www.facebook.com/profile.php?id=100010785578689"
@@ -32,9 +35,19 @@ const Layout = () => {
           <FaGithub size={24} />
         </a>
       </div>
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-current">
+
+      {/* Navbar */}
+      <div className="relative z-10">
         <Navbar />
+      </div>
+
+      {/* Main Content */}
+      <main className="relative z-10">
         <Outlet />
+      </main>
+
+      {/* Footer */}
+      <div className="relative z-10">
         <Footer />
       </div>
     </div>

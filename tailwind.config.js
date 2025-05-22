@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
+        "hero-animate-bg": "url('/src/assets/Bg_Video.gif')",
       },
     },
   },

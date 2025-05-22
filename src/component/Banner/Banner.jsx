@@ -1,9 +1,9 @@
 // import { FaDownload } from "react-icons/fa";
 // import Container from "../../ShareComponent/Container/Container";
 // import profileImg from "../../assets/photo.png";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { styles } from "../../styles";
-import { ComputersCanvas } from "../canvas";
 const Banner = () => {
   return (
     <section id="home" className="relative w-full h-screen mx-auto">
@@ -20,30 +20,34 @@ const Banner = () => {
             Hi, I&apos;m{" "}
             <span className="text-[#915eff]">Md Mahmudul Hassan</span>{" "}
           </h1>
+          <h2 className={`${styles.heroSubText}`}>
+            I&apos;m a Frontend Developer
+          </h2>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I&apos;m a MERN Developer, user <br className="hidden sm:block" />{" "}
             interfaces and web applications
           </p>
+          {/* social media & cv download button */}
+          <div className="flex">
+            <a
+              href="#"
+              className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-[#7cf03d]"
+            >
+              Download CV
+            </a>
+            <div className="flex items-center text-[32px]">
+              <a href="#">
+                <FaLinkedin />
+              </a>
+              <a href="#">
+                <FaGithub />
+              </a>
+              <a href="#">
+                <FaFacebook />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-      <ComputersCanvas />
-      {/* framer motion */}
-      <div className="hidden md:absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
-          <span className="w-9 h-16 rounded-3xl border-4 border-secondary flex justify-center items-center p-2">
-            <motion.div
-              animate={{
-                y: [-16, 24, -16],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </span>
-        </a>
       </div>
     </section>
   );
