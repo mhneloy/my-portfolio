@@ -1,11 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../ShareComponent/Navbar/Navbar";
 import Footer from "../ShareComponent/footer/Footer";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Layout = () => {
   return (
-    <div className="relative  overflow-hidden bg-hero-animate-bg">
+    <div className="relative overflow-hidden ">
       {/* Full-Page Lottie Background */}
 
       {/* Social Icons Sidebar */}
@@ -34,11 +33,6 @@ const Layout = () => {
         >
           <FaGithub size={24} />
         </a>
-      </div>
-
-      {/* Navbar */}
-      <div className="relative z-10">
-        <Navbar />
       </div>
 
       {/* Main Content */}

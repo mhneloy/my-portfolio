@@ -40,7 +40,11 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   const { experienceRef } = useContext(AuthContext);
   return (
-    <section id="experience" ref={experienceRef} className="mt-8">
+    <section
+      id="experience"
+      ref={experienceRef}
+      className="pt-8 bg-hero-animate bg-no-repeat bg-cover bg-center"
+    >
       <Container>
         <motion.div variants={textVariant()}>
           <SectionTitle

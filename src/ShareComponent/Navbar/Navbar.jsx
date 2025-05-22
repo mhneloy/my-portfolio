@@ -6,14 +6,15 @@ import { menu, close, brandLogo } from "../../assets";
 import { AuthContext } from "../AuthContext/ContextProvider";
 
 const Navbar = () => {
-  const { aboutRef, experienceRef, projectRef } = useContext(AuthContext);
-  const [Active, setActive] = useState();
+  const { aboutRef, experienceRef } = useContext(AuthContext);
   const [toggle, setToggle] = useState(false);
   const handleScroll = (section) => {
     section.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div className={`bg-transparent shadow-md sticky top-0 z-50 py-4 w-full`}>
+    <div
+      className={`bg-transparent sticky top-0 z-50 py-4 w-full backdrop-blur-0`}
+    >
       <Container>
         <nav className="flex justify-between items-center">
           <Link to={"/"}>
@@ -118,6 +119,7 @@ const Navbar = () => {
               className={`${
                 toggle ? "flex" : "hidden"
               } p-4 black-gradient absolute top-16 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+              style={{ background: "transparent" }}
             >
               <ul className="">
                 <li>

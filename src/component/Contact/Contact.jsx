@@ -24,7 +24,10 @@ const Contact = () => {
       );
   };
   return (
-    <section className=" p-8" id="contact">
+    <section
+      className=" p-8 bg-hero-animate bg-no-repeat bg-cover bg-center"
+      id="contact"
+    >
       <Container>
         <SectionTitle title={"Contact Me"} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

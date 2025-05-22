@@ -30,19 +30,14 @@ const ServiceCard = ({ index, icon, title }) => {
 const About = () => {
   const { aboutRef } = useContext(AuthContext);
   return (
-    <div id="about" ref={aboutRef}>
+    <div
+      id="about"
+      ref={aboutRef}
+      className="bg-hero-animate bg-no-repeat bg-cover bg-center"
+    >
       <Container>
         <SectionTitle title={"About Me"} />
-        {/* <p className="text-lg">
-          I&apos;m a frontend developer skilled in building beautiful and
-          responsive web applications. I also have experience with backend
-          technologies such as Node.js, Express.js, and MongoDB.
-        </p>
-        <div className="flex space-x-4 mt-4">
-          <FaReact className="text-blue-500 text-3xl" />
-          <FaNodeJs className="text-green-500 text-3xl" />
-          <FaDatabase className="text-yellow-500 text-3xl" />
-        </div> */}
+
         <div className="flex flex-wrap justify-between mt-5">
           <div className="w-full md:w-[70%] flex flex-col items-start justify-center">
             <motion.p

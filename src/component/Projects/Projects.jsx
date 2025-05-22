@@ -77,7 +77,10 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <div id="projects">
+    <div
+      id="projects"
+      className="bg-hero-animate bg-no-repeat bg-cover bg-center"
+    >
       <Container>
         <SectionTitle title={"My Project"} />
         <div className="flex justify-center items-center w-full  ">
