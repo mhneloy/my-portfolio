@@ -6,11 +6,11 @@ import "./style.css";
 import Container from "../../ShareComponent/Container/Container";
 const Banner = () => {
   return (
-    <section className="bg-hero-animate bg-no-repeat bg-cover bg-center relative banner_after main_banner h-screen">
+    <section className="bg-hero-animate bg-no-repeat bg-cover bg-center relative banner_gradient banner_z_index h-screen">
       {/* navbar */}
       <Navbar />
       <Container>
-        <div className="flex justify-between items-center  ">
+        <div className="flex justify-between items-center z-10 ">
           <div className={` mx-auto flex flex-row items-start gap-4 w-[62%] `}>
             <div className="flex flex-col justify-center items-center mt-5">
               <div className="w-5 h-5 rounded-full bg-[#7cf03d]" />
@@ -24,8 +24,36 @@ const Banner = () => {
                   Md Mahmudul Hassan
                 </span>{" "}
               </h1>
-              <h2 className={`${styles.heroSubText}`}>
-                I&apos;m a Frontend Developer
+              <h2 className={`${styles.heroSubText} inline-block`}>
+                I&apos;m a{" "}
+                <span
+                  className="span"
+                  style={{ "--i": 4 }}
+                  data-text="Web Developer"
+                >
+                  Web Developer
+                </span>
+                <span
+                  className="span"
+                  style={{ "--i": 3 }}
+                  data-text="Front-End Developer"
+                >
+                  Front-End Developer
+                </span>
+                <span
+                  className="span"
+                  style={{ "--i": 2 }}
+                  data-text="Back-End Developer"
+                >
+                  Back-End Developer
+                </span>
+                <span
+                  className="span"
+                  style={{ "--i": 1 }}
+                  data-text="Full-Stack Developer"
+                >
+                  Full-Stack Developer
+                </span>
               </h2>
               <p className={`${styles.heroSubText} mt-2 text-white-100`}>
                 I&apos;m a MERN Developer, user{" "}
@@ -73,7 +101,7 @@ const Banner = () => {
                 <img
                   src={profileImg}
                   alt="profile_image"
-                  className="absolute block object-cover w-full rounded-full -mt-2"
+                  className="absolute block object-cover w-full rounded-full -mt-2 mix-blend-lighten"
                 />
               </div>
             </div>
