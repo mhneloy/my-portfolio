@@ -2,7 +2,18 @@
 .img-box::before {
   content: " ";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 650px;
+  height: 650px;
   background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+}
+.banner_after::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.main_banner {
+  z-index: -1;
 }
