@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { github } from "../../assets";
 import { projects } from "../../constants";
 import { fadeIn } from "../../utils/motion";
-import { textVariant } from "../../utils/motion";
+// import { textVariant } from "../../utils/motion";
 import Container from "../../ShareComponent/Container/Container";
 import PropTypes from "prop-types";
 // import { image } from "framer-motion/client";
@@ -14,8 +14,7 @@ import Modal from "../../ShareComponent/modal/Modal";
 
 const ProjectCard = ({ project, index }) => {
   const [openModal, setOpenModal] = useState(null);
-  const { id, tags, name, image, description, source_code_link, live_link } =
-    project;
+  const { id, name, image, description, source_code_link, live_link } = project;
   const handleOpenModal = (id) => {
     setOpenModal(id);
   };
@@ -77,10 +76,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <div
-      id="projects"
-      className="bg-hero-animate bg-no-repeat bg-cover bg-center"
-    >
+    <div id="projects">
       <Container>
         <SectionTitle title={"My Project"} />
         <div className="flex justify-center items-center w-full  ">

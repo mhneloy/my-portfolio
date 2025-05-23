@@ -4,16 +4,19 @@ import Contact from "../Contact/Contact";
 import MySkill from "../MySkill/MySkill";
 import Projects from "../Projects/Projects";
 import Experience from "../Experience/Experience";
+import "./style.css";
 
 const Home = () => {
   return (
     <div>
       <Banner />
-      <About />
-      <Experience />
-      <MySkill />
-      <Projects />
-      <div className="relative z-0">
+      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative">
+        <About />
+        <Experience />
+      </div>
+      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative">
+        <MySkill />
+        <Projects />
         <Contact />
       </div>
     </div>

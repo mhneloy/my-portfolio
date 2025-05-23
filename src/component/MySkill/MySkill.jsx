@@ -8,10 +8,7 @@ import Marquee from "react-fast-marquee";
 
 const MySkill = () => {
   return (
-    <section
-      id="myskill"
-      className="bg-hero-animate bg-no-repeat bg-cover bg-center"
-    >
+    <section id="myskill">
       <Container>
         <SectionTitle title={"My Skill"} />
 

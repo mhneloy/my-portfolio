@@ -30,11 +30,7 @@ const ServiceCard = ({ index, icon, title }) => {
 const About = () => {
   const { aboutRef } = useContext(AuthContext);
   return (
-    <div
-      id="about"
-      ref={aboutRef}
-      className="bg-hero-animate bg-no-repeat bg-cover bg-center"
-    >
+    <div id="about" ref={aboutRef}>
       <Container>
         <SectionTitle title={"About Me"} />
 
