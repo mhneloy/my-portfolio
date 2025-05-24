@@ -1,0 +1,20 @@
+@keyframes arrowTrail {
+  0% {
+    left: -10px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+
+.animate-arrowTrail {
+  animation: arrowTrail 1.2s linear infinite;
+}
