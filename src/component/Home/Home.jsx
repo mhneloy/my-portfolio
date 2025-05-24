@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative">
+      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative z-10">
         <About />
         <Experience />
       </div>
-      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative">
+      <div className="bg-hero-animate bg-no-repeat bg-cover bg-center about-gradient relative z-10">
         <MySkill />
         <Projects />
         <Contact />
