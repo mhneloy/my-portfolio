@@ -38,11 +38,11 @@ const About = () => {
       <Container>
         <SectionTitle title="About Me" />
 
-        <div className="mt-12 flex  flex-col md:flex-row justify-center items-start gap-14">
+        <div className="mt-12 flex  flex-col lg:flex-row justify-center items-start gap-14">
           {/* Image */}
           <motion.div
             variants={fadeIn("left", "spring", 0.3, 0.75)}
-            className="md:w-[30%] w-full flex justify-center"
+            className="lg:w-[30%] w-full flex justify-center"
           >
             <div className="bg-black/20 border border-green-400 p-3 rounded-full shadow-[0_0_25px_#00ff88]">
               <img
@@ -54,7 +54,7 @@ const About = () => {
           </motion.div>
 
           {/* Description */}
-          <div className="md:w-[70%] w-full">
+          <div className="lg:w-[70%] w-full">
             <motion.div
               variants={fadeIn("right", "spring", 0.5, 0.75)}
               className=" text-white"
@@ -89,12 +89,17 @@ const About = () => {
               </Link>
             </motion.div>
             {/* Services */}
-            <div className="mt-24 flex flex-wrap justify-start items-center gap-8">
+            <div className="mt-24 flex md:hidden 2xl:flex flex-wrap justify-start items-center  gap-8">
               {services.map((service, idx) => (
                 <ServiceCard key={idx} {...service} index={idx} />
               ))}
             </div>
           </div>
+        </div>
+        <div className="mt-24 hidden md:flex 2xl:hidden flex-wrap justify-center items-center gap-8 ">
+          {services.map((service, idx) => (
+            <ServiceCard key={idx} {...service} index={idx} />
+          ))}
         </div>
       </Container>
     </div>
