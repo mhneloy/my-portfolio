@@ -4,11 +4,35 @@ import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { styles } from "../../styles";
 import "./style.css";
 import Container from "../../ShareComponent/Container/Container";
+import { useEffect, useState } from "react";
 const Banner = () => {
+  const [scrolly, setScrolly] = useState(false);
+  useEffect(() => {
+    const handleScrolly = () => {
+      if (window.scrollY > 150) {
+        setScrolly(true);
+      } else {
+        setScrolly(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScrolly);
+    return () => window.removeEventListener("scroll", handleScrolly);
+  }, []);
   return (
-    <section className="bg-hero-animate bg-no-repeat bg-cover bg-center relative banner_gradient banner_z_index h-screen">
+    <section
+      id="home"
+      className="bg-hero-animate bg-no-repeat bg-cover bg-center relative h-screen"
+    >
       {/* navbar */}
-      <Navbar />
+      <div
+        className={`bg-transparent ${
+          scrolly ? "fixed" : "static"
+        } top-0 z-50 py-4 w-full backdrop-blur-0 transition-all duration-500`}
+      >
+        <Navbar />
+      </div>
+
       <Container>
         <div className="flex justify-between items-center z-10 ">
           <div className={` mx-auto flex flex-row items-start gap-4 w-[62%] `}>

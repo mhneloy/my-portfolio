@@ -4,17 +4,17 @@ import { useContext, useState } from "react";
 
 import { menu, close, brandLogo } from "../../assets";
 import { AuthContext } from "../AuthContext/ContextProvider";
-
+import "./style.css";
 const Navbar = () => {
   const { aboutRef, experienceRef } = useContext(AuthContext);
   const [toggle, setToggle] = useState(false);
+
   const handleScroll = (section) => {
     section.current?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
-    <div
-      className={`bg-transparent sticky top-0 z-50 py-4 w-full backdrop-blur-0`}
-    >
+    <div>
       <Container>
         <nav className="flex justify-between items-center">
           <Link to={"/"}>
@@ -22,12 +22,12 @@ const Navbar = () => {
               <img src={brandLogo} alt="" className="w-40 md:w-60" />
             </div>
           </Link>
-          <ul className="hidden sm:flex space-x-4 items-center">
+          <ul className="hidden sm:flex space-x-4 items-center text-brand">
             <li>
               <NavLink
                 to="/"
-                className={`hover:text-white text-[18px] ${(isActive) =>
-                  isActive ? "text-white" : "text-secondary"}`}
+                className={`nav-text text-[18px] ${(isActive) =>
+                  isActive ? "text-brand" : "text-brand"}`}
                 onClick={() =>
                   document
                     .getElementById("home")
@@ -39,9 +39,8 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                className={`hover:text-white text-[18px] cursor-pointer ${(
-                  isActive
-                ) => (isActive ? "text-white" : "text-secondary")}`}
+                className={`nav-text text-[18px] cursor-pointer ${(isActive) =>
+                  isActive ? "text-brand" : "text-secondary"}`}
                 onClick={() => handleScroll(aboutRef)}
               >
                 About
@@ -49,9 +48,8 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                className={`hover:text-white text-[18px] cursor-pointer ${(
-                  isActive
-                ) => (isActive ? "text-white" : "text-secondary")}`}
+                className={`nav-text text-[18px] cursor-pointer ${(isActive) =>
+                  isActive ? "text-brand" : "text-secondary"}`}
                 onClick={() => handleScroll(experienceRef)}
               >
                 Experience
@@ -59,9 +57,8 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                className={`hover:text-white text-[18px] cursor-pointer ${(
-                  isActive
-                ) => (isActive ? "text-white" : "text-secondary")}`}
+                className={`nav-text text-[18px] cursor-pointer ${(isActive) =>
+                  isActive ? "text-brand" : "text-secondary"}`}
                 onClick={() =>
                   document
                     .getElementById("myskill")
@@ -73,8 +70,8 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                className={`hover:text-white text-[18px] ${(isActive) =>
-                  isActive ? "text-white" : "text-secondary"}`}
+                className={`nav-text text-[18px] ${(isActive) =>
+                  isActive ? "text-brand" : "text-secondary"}`}
                 onClick={() =>
                   document
                     .getElementById("projects")
@@ -86,8 +83,8 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                className={`hover:text-white text-[18px] ${(isActive) =>
-                  isActive ? "text-white" : "text-secondary"}`}
+                className={`nav-text text-[18px] ${(isActive) =>
+                  isActive ? "text-brand" : "text-secondary"}`}
                 onClick={() =>
                   document
                     .getElementById("contact")

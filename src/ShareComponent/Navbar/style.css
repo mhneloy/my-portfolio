@@ -1,0 +1,21 @@
+.nav-text {
+  color: #7cf03d;
+  transition: text-shadow 0.3s ease;
+  position: relative;
+}
+.nav-text:hover {
+  text-shadow: 0 0 10px #7cf03d;
+}
+.nav-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7cf03d;
+  transition: 0.4s linear;
+}
+.nav-text:hover::after {
+  width: 100%;
+}
