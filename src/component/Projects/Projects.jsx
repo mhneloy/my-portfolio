@@ -82,7 +82,7 @@ const Projects = () => {
         <div className="flex justify-center items-center w-full  ">
           <motion.p
             variants={fadeIn("", "", 0.2, 1)}
-            className="mt-3 text-secondary text-[17px] max-w-3xl"
+            className="mt-3 text-gray-300  text-lg leading-relaxed "
           >
             Follwing project showcase my skills and experience through
             reat-world examples of my work. Each project is briefly described of
