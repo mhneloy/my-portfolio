@@ -98,7 +98,7 @@ const Navbar = () => {
               <a
                 href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB"
                 download
-                className="btn"
+                className="btn  bg-transparent text-[#7cf03d] text-[16px] font-semibold shadow-[0_0_10px_#7cf03d] hover:bg-[#7cf03d] hover:text-[#1f242d]"
               >
                 Download Resume
               </a>

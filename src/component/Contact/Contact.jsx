@@ -34,28 +34,31 @@ const Contact = () => {
                 type="text"
                 name="from_name"
                 placeholder="Your Name"
-                className="input input-bordered"
+                className="input input-bordered bg-transparent border-[#7cf03d] focus:border-none"
               />
               <input
                 type="email"
                 name="to_name"
                 placeholder="Your Email"
-                className="input input-bordered"
+                className="input input-bordered bg-transparent border-[#7cf03d] focus:border-none"
               />
               <textarea
                 placeholder="Your Message"
                 name="message"
-                className="textarea textarea-bordered"
+                className="textarea textarea-bordered bg-transparent border-[#7cf03d] focus:border-none"
                 rows="5"
               ></textarea>
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn  text-[#1f242d] text-[16px] bg-[#7cf03d] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d]"
+              >
                 Send Email
               </button>
             </form>
           </div>
 
           {/* My Information */}
-          <div className="bg-tertiary rounded-lg shadow-lg flex flex-col justify-center items-start space-y-4 p-6">
+          <div className="bg-transparent rounded-lg shadow-[0_0_10px_#7cf03d] flex flex-col justify-center items-start space-y-4 p-6">
             <h3 className="text-xl font-semibold text-primary">Contact Info</h3>
             <div className="flex items-center space-x-3">
               <span className="text-gray-600">📍</span>

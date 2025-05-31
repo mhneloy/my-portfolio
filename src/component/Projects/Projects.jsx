@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index }) => {
             scale: 1,
             speed: 450,
           }}
-          className="bg-tertiary p-5 rounded-2xl  w-full"
+          className="bg-transparent border-2 border-solid border-[#7cf03d] p-5 rounded-2xl  w-full"
         >
           <div className="relative w-full ">
             <img
