@@ -5,6 +5,8 @@ import { styles } from "../../styles";
 import "./style.css";
 import Container from "../../ShareComponent/Container/Container";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../utils/motion";
 const Banner = () => {
   const [scrolly, setScrolly] = useState(false);
   useEffect(() => {
@@ -35,7 +37,10 @@ const Banner = () => {
 
       <Container>
         <div className="flex justify-between items-center z-10 ">
-          <div className={` mx-auto flex flex-row items-start gap-4 w-[62%] `}>
+          <motion.div
+            variants={fadeIn("left", "spring", 0.5 * 0.3, 0.75)}
+            className={` mx-auto flex flex-row items-start gap-4 w-[62%] `}
+          >
             <div className="flex flex-col justify-center items-center mt-5">
               <div className="w-5 h-5 rounded-full bg-[#7cf03d]" />
               <div className="w-1 h-40 sm:h-96 green-gradient " />
@@ -114,10 +119,12 @@ const Banner = () => {
                 </div>
               </div>
             </div>
-          </div>
-
+          </motion.div>
           {/* images division */}
-          <div className="w-[38%] flex justify-center items-center">
+          <motion.div
+            variants={fadeIn("right", "spring", 0.5 * 0.3, 0.75)}
+            className="w-[38%] flex justify-center items-center"
+          >
             <div
               className={`relative flex justify-center w-[32vw] h-[32vw] rounded-full img-box overflow-hidden`}
             >
@@ -129,7 +136,7 @@ const Banner = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
