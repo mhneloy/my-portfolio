@@ -24,7 +24,7 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="bg-hero-animate bg-no-repeat bg-cover bg-center relative h-screen"
+      className="bg-hero-animate bg-no-repeat bg-cover bg-center relative xl:h-screen"
     >
       {/* navbar */}
       <div
@@ -39,7 +39,7 @@ const Banner = () => {
         <div className="flex justify-between items-center z-10 ">
           <motion.div
             variants={fadeIn("left", "spring", 0.5 * 0.3, 0.75)}
-            className={` mx-auto flex flex-row items-start gap-4 w-[62%] `}
+            className={` mx-auto flex flex-row items-start gap-4 md:w-[62%] `}
           >
             <div className="flex flex-col justify-center items-center mt-5">
               <div className="w-5 h-5 rounded-full bg-[#7cf03d]" />
@@ -90,7 +90,7 @@ const Banner = () => {
                 applications
               </p>
               {/* social media & cv download button */}
-              <div className="flex gap-5 mt-6">
+              <div className="flex gap-5 flex-col-reverse mt-6">
                 <a
                   href="#"
                   className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d]"
@@ -123,7 +123,7 @@ const Banner = () => {
           {/* images division */}
           <motion.div
             variants={fadeIn("right", "spring", 0.5 * 0.3, 0.75)}
-            className="w-[38%] flex justify-center items-center"
+            className="w-[38%] justify-center items-center hidden md:flex"
           >
             <div
               className={`relative flex justify-center w-[32vw] h-[32vw] rounded-full img-box overflow-hidden`}

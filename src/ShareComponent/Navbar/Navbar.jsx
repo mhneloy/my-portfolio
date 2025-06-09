@@ -57,8 +57,9 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                className={`nav-text text-[18px] cursor-pointer ${(isActive) =>
-                  isActive ? "text-brand" : "text-secondary"}`}
+                className={`inline-block w-max nav-text text-[18px] cursor-pointer ${(
+                  isActive
+                ) => (isActive ? "text-brand" : "text-secondary")}`}
                 onClick={() =>
                   document
                     .getElementById("myskill")
