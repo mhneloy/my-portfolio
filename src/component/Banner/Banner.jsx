@@ -93,7 +93,7 @@ const Banner = () => {
               <div className="flex gap-5 flex-col-reverse mt-6">
                 <a
                   href="#"
-                  className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d]"
+                  className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d] w-fit"
                 >
                   Download CV
                 </a>

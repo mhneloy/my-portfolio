@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaEye, FaLock, FaGithub } from "react-icons/fa";
 import { PiEyeClosedFill } from "react-icons/pi";
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
   const [eye, setEye] = useState(false);
@@ -16,12 +17,14 @@ const SignIn = () => {
     console.log(data);
     reset();
   };
+
   const handleEye = () => {
     setEye(!eye);
   };
+
   return (
     <div>
-      <div className="flex justify-center items-center  min-h-[calc(100vh-84px)] bg-hero-animate">
+      <div className="flex justify-center items-center min-h-[calc(100vh-84px)] bg-hero-animate">
         <div className="w-full max-w-md p-8 spacey-4 shadow-lg bg-transparent border-2 border-solid border-brand rounded-xl">
           <h2 className="text-3xl font-bold text-center">Sign In</h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -34,7 +37,7 @@ const SignIn = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="input input-bordered  w-full pl-10 focus:outline-none"
+                  className="input input-bordered w-full pl-10 focus:outline-none"
                   {...register("email", { required: "Email is required" })}
                 />
                 <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -53,7 +56,7 @@ const SignIn = () => {
               </label>
               <div className="relative">
                 <input
-                  type={`${eye === true ? "text" : "password"}`}
+                  type={eye ? "text" : "password"}
                   placeholder="Enter your password"
                   className="input input-bordered w-full focus:outline-none pl-10"
                   {...register("password", {
@@ -64,7 +67,7 @@ const SignIn = () => {
                 <div
                   className={`${
                     eye === true ? "absolute" : "hidden"
-                  } right-3 text-xl top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer `}
+                  } right-3 text-xl top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer`}
                   onClick={handleEye}
                 >
                   <FaEye />
@@ -72,7 +75,7 @@ const SignIn = () => {
                 <div
                   className={`${
                     eye === false ? "absolute" : "hidden"
-                  } right-3 top-1/2 text-xl transform -translate-y-1/2 text-gray-400 hover:cursor-pointer  `}
+                  } right-3 top-1/2 text-xl transform -translate-y-1/2 text-gray-400 hover:cursor-pointer`}
                   onClick={handleEye}
                 >
                   <PiEyeClosedFill />
@@ -87,8 +90,33 @@ const SignIn = () => {
 
             {/* Submit Button */}
             <div className="form-control mt-4">
-              <button type="submit" className="btn btn-primary w-full">
+              <button
+                type="submit"
+                className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d] w-full"
+              >
                 Sign In
+              </button>
+            </div>
+
+            {/* Divider */}
+            <div className="divider">OR</div>
+
+            {/* Social Buttons */}
+            <div className="flex flex-col gap-3">
+              <button
+                type="button"
+                className="btn text-[#7cf03d] border-[#7cf03d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] bg-transparent hover:bg-transparent hover:scale-105 w-full flex items-center gap-3 justify-center"
+              >
+                <FcGoogle className="text-xl" />
+                Continue with Google
+              </button>
+
+              <button
+                type="button"
+                className="btn text-[#7cf03d] border-[#7cf03d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] bg-transparent hover:bg-transparent hover:scale-105 w-full flex items-center gap-3 justify-center"
+              >
+                <FaGithub className="text-xl" />
+                Continue with GitHub
               </button>
             </div>
           </form>
