@@ -4,6 +4,7 @@ import ErrorPage from "../ShareComponent/Error/ErrorPage";
 import Home from "../component/Home/Home";
 import Dashboard from "../Dashboard/Dashboard";
 import AddProject from "../Dashboard/AddProject";
+import SignIn from "../component/SignIn/SignIn";
 
 export const route = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const route = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/signIn",
+        element: <SignIn />,
       },
     ],
   },
