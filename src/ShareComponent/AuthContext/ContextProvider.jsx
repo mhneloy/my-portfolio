@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
-import { createContext, useRef, useState } from "react";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useRef, useState } from "react";
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import auth from "../../firebase.init";
 
 export const AuthContext = createContext(null);
@@ -22,6 +27,19 @@ const ContextProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+
+  // on auth state change
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        console.log(currentUser);
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
   const authInfo = {
     user,
     setUser,

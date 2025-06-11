@@ -6,6 +6,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import AddProject from "../Dashboard/AddProject";
 import SignIn from "../component/SignIn/SignIn";
 import Profile from "../component/profile/Profile";
+import AdminRoute from "../PrivateRoutes/AdminRoute";
 
 export const route = createBrowserRouter([
   {
@@ -29,11 +30,19 @@ export const route = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Profile />,
+        element: (
+          <AdminRoute>
+            <Profile />
+          </AdminRoute>
+        ),
       },
       {
         path: "addproject",
-        element: <AddProject />,
+        element: (
+          <AdminRoute>
+            <AddProject />
+          </AdminRoute>
+        ),
       },
     ],
   },
