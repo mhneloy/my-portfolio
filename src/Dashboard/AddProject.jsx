@@ -19,7 +19,7 @@ const AddProject = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-hero-animate bg-no-repeat bg-cover bg-center">
+    <div className="flex flex-col items-center justify-center p-6">
       {/* Lottie Animation */}
       <Lottie animationData={formLottie} className="w-40 h-40" />
 
