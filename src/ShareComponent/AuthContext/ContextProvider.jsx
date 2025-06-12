@@ -40,6 +40,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
+        setUser(currentUser);
         console.log(currentUser);
         setLoading(false);
       } else {

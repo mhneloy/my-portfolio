@@ -7,6 +7,7 @@ import AddProject from "../Dashboard/AddProject";
 import SignIn from "../component/SignIn/SignIn";
 import Profile from "../component/profile/Profile";
 import AdminRoute from "../PrivateRoutes/AdminRoute";
+import Email from "../Dashboard/Email";
 
 export const route = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ export const route = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard",
+        path: "",
         element: (
           <AdminRoute>
             <Profile />
@@ -41,6 +42,14 @@ export const route = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddProject />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "email",
+        element: (
+          <AdminRoute>
+            <Email />
           </AdminRoute>
         ),
       },
