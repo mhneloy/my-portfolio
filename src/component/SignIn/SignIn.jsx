@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEnvelope, FaEye, FaLock, FaGithub } from "react-icons/fa";
 import { PiEyeClosedFill } from "react-icons/pi";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
 
 const SignIn = () => {
   const [eye, setEye] = useState(false);
+  const { singInUser, successToast, errorToast } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -14,7 +16,13 @@ const SignIn = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    singInUser(email, password)
+      .then((result) => {
+        console.log(result);
+        successToast("Successfully Login");
+      })
+      .catch(() => errorToast("Email or Passwrod is wrong"));
     reset();
   };
 

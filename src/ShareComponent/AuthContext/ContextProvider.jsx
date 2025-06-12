@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { createContext, useEffect, useRef, useState } from "react";
+import auth from "../../firebase.init";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
 const ContextProvider = ({ children }) => {
@@ -15,6 +17,12 @@ const ContextProvider = ({ children }) => {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectRef = useRef(null);
+
+  // login with email & password
+  const singInUser = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   // signIn with google
   const googleProvider = new GoogleAuthProvider();
@@ -40,6 +48,15 @@ const ContextProvider = ({ children }) => {
     });
     return () => unsubscribe();
   }, []);
+
+  // success toastify
+  const successToast = (message) => {
+    toast.success(message, { position: "top-right" });
+  };
+  // error toastify
+  const errorToast = (message) => {
+    toast.error(message, { position: "top-right" });
+  };
   const authInfo = {
     user,
     setUser,
@@ -47,8 +64,11 @@ const ContextProvider = ({ children }) => {
     aboutRef,
     experienceRef,
     projectRef,
+    singInUser,
     googleSignIn,
     logOut,
+    successToast,
+    errorToast,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
