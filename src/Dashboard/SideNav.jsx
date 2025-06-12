@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const SideNav = () => {
   return (
-    <div className="w-full md:w-64 min-h-[calc(100vh-84px)] bg-brand">
+    <div className="w-full lg:w-64 lg:min-h-svh bg-brand">
       <ul className=" text-[#000000]">
         <li>
           {" "}
