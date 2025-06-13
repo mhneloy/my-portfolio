@@ -92,7 +92,7 @@ const Banner = () => {
               {/* social media & cv download button */}
               <div className="flex gap-5 flex-col-reverse mt-6">
                 <a
-                  href="#"
+                  href="https://drive.google.com/uc?export=download&id=1H5hrwr5XFdWNiDAP6O9vjQ3zijGab1m1"
                   className="btn bg-[#7cf03d] text-[#1f242d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] hover:bg-transparent hover:text-[#7cf03d] w-fit"
                 >
                   Download CV

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaUserEdit, FaSignOutAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
@@ -6,7 +6,16 @@ import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
 const Profile = () => {
   const navigate = useNavigate();
   const { logOut } = useContext(AuthContext);
+  const [profile, setprofile] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5050/profileDetails`)
+      .then((res) => res.json())
+      .then((data) => {
+        setprofile(data);
+      });
+  }, []);
 
+  console.log(profile.photo);
   const handleEdit = () => {
     navigate("/dashboard/edit-profile");
   };
@@ -18,15 +27,12 @@ const Profile = () => {
 
   return (
     <div className="min-h-[calc(100vh-84px)] flex items-center justify-center bg-transparent px-4 py-8">
-      <div className="border border-[#7cf03d] rounded-2xl p-8 w-full max-w-md text-white bg-transparent backdrop-blur-sm shadow-xl">
+      <div className="border border-[#7cf03d] rounded-2xl p-8 w-full max-w-lg text-white bg-transparent backdrop-blur-sm shadow-xl">
         <div className="flex flex-col items-center text-center space-y-4">
           {/* Profile Image */}
           <div className="avatar">
-            <div className="w-28 rounded-full ring ring-[#7cf03d] ring-offset-base-100 ring-offset-2">
-              <img
-                src="https://i.ibb.co/sqZ2vM1/profile.jpg"
-                alt="User profile"
-              />
+            <div className="w-36 rounded-full ring ring-[#7cf03d] ring-offset-base-100 ring-offset-2">
+              <img src={profile.photo} alt="Md Mahmudul Hassan" />
             </div>
           </div>
 

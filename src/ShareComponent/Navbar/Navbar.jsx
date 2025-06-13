@@ -97,7 +97,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://drive.google.com/uc?export=download&id=1EC1TRmNRZGSDelfqt2prL1BKw0TAuhoB"
+                href="https://drive.google.com/uc?export=download&id=1H5hrwr5XFdWNiDAP6O9vjQ3zijGab1m1"
                 download
                 className="btn  bg-transparent text-[#7cf03d] text-[16px] font-semibold shadow-[0_0_10px_#7cf03d] hover:bg-[#7cf03d] hover:text-[#1f242d]"
               >
