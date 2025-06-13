@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# DB_User=Mhneloy_Portfolio
+#DB_Pass=IW9mdOkf0VId6Fwq

@@ -7,7 +7,11 @@ const AdminRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   if (loading) {
-    return <span className="loading loading-spinner text-success"></span>;
+    return (
+      <div className="flex justify-center items-center">
+        <span className="loading loading-spinner text-success"></span>
+      </div>
+    );
   }
   if (user) {
     return children;

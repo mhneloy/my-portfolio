@@ -53,16 +53,17 @@ const AddProject = () => {
 
           {/* Project Image */}
           <div>
-            <label className="label text-white">Project Image URL</label>
+            <label className="label text-white">Project Image</label>
             <input
               {...register("projectImage", { required: true })}
-              type="url"
-              placeholder="https://image.link"
-              className="input input-bordered w-full text-white"
-              style={{ borderColor: "#7cf03d" }}
+              type="file"
+              accept="image/*"
+              className="file-input file-input-bordered file-input-success w-full bg-gray-800 text-white border border-brand file:bg-brand placeholder:text-gray-400"
             />
             {errors.projectImage && (
-              <span className="text-red-400">Image URL is required</span>
+              <p className="text-sm text-red-400 mt-1">
+                Project image is required
+              </p>
             )}
           </div>
 
@@ -146,7 +147,8 @@ const AddProject = () => {
             <input
               {...register("developerName", { required: true })}
               type="text"
-              placeholder="Your Name"
+              value="Md Mahmudul Hassan"
+              readOnly
               className="input input-bordered w-full text-white"
               style={{ borderColor: "#7cf03d" }}
             />
