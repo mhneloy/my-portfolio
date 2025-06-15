@@ -2,18 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { FaUserEdit, FaSignOutAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
+import axios from "axios";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user.email);
   const [profile, setprofile] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5050/profileDetails`)
-      .then((res) => res.json())
-      .then((data) => {
-        setprofile(data);
-      });
-  }, []);
+    axios(`http://localhost:5050/profileDetails?email=${user.email}`, {
+      withCredentials: true,
+    }).then((res) => {
+      setprofile(res.data);
+    });
+  }, [user.email]);
 
   console.log(profile.photo);
   const handleEdit = () => {
@@ -37,9 +39,9 @@ const Profile = () => {
           </div>
 
           {/* Name and Designation */}
-          <h2 className="text-2xl font-bold">Md Mahmudul Hassan</h2>
+          <h2 className="text-2xl font-bold">{profile.name}</h2>
           <p className="text-sm text-gray-300 tracking-wide">
-            Full Stack Web Developer
+            {profile.designation}
           </p>
 
           {/* Buttons */}

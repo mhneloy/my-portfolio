@@ -5,6 +5,7 @@ import { PiEyeClosedFill } from "react-icons/pi";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../ShareComponent/AuthContext/ContextProvider";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
   const [eye, setEye] = useState(false);
@@ -22,6 +23,10 @@ const SignIn = () => {
     const { email, password } = data;
     singInUser(email, password)
       .then(() => {
+        const user = { email: email };
+        axios
+          .post("http://localhost:5050/jwt", user, { withCredentials: true })
+          .then((data) => console.log(data));
         successToast("Successfully Login");
         navigate(location.state || "/dashboard");
       })
