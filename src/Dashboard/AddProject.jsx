@@ -3,8 +3,15 @@ import { FaGithub, FaLink, FaUser, FaClock, FaCode } from "react-icons/fa";
 import { MdOutlineDescription } from "react-icons/md";
 import formLottie from "./form.json";
 import Lottie from "lottie-react";
+import axios from "axios";
+import { useState } from "react";
+import useAxiosSecure from "../useHooks/useAxiosSecure";
+import useContextHooks from "../useHooks/useContextHooks";
 
 const AddProject = () => {
+  const { user } = useContextHooks();
+  const [imageurl, setImageUrl] = useState(null);
+  const axiosInstance = useAxiosSecure();
   const {
     register,
     handleSubmit,
@@ -13,11 +20,33 @@ const AddProject = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    const formData = data;
+    formData.projectImage = imageurl;
+    formData.email = user.email;
+
     // send to backend here
+    axiosInstance
+      .post("/projectData", formData)
+      .then((res) => console.log(res.data));
     reset();
   };
 
+  // image upload
+  const handleImageUpload = (e) => {
+    const imageFile = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", imageFile);
+    axios
+      .post(
+        `https://api.imgbb.com/1/upload?key=${
+          import.meta.env.VITE_imgBB_api_key
+        }`,
+        formData
+      )
+      .then((res) => setImageUrl(res.data.data.display_url))
+      .catch((err) => console.log("Image upload failed: ", err));
+    console.log(formData);
+  };
   return (
     <div className="flex flex-col items-center justify-center p-6">
       {/* Lottie Animation */}
@@ -58,6 +87,7 @@ const AddProject = () => {
               {...register("projectImage", { required: true })}
               type="file"
               accept="image/*"
+              onChange={handleImageUpload}
               className="file-input file-input-bordered file-input-success w-full bg-gray-800 text-white border border-brand file:bg-brand placeholder:text-gray-400"
             />
             {errors.projectImage && (

@@ -10,9 +10,12 @@ const Profile = () => {
   console.log(user.email);
   const [profile, setprofile] = useState([]);
   useEffect(() => {
-    axios(`http://localhost:5050/profileDetails?email=${user.email}`, {
-      withCredentials: true,
-    }).then((res) => {
+    axios(
+      `https://portfolio-server-ten-plum.vercel.app/profileDetails?email=${user.email}`,
+      {
+        withCredentials: true,
+      }
+    ).then((res) => {
       setprofile(res.data);
     });
   }, [user.email]);

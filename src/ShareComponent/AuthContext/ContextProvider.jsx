@@ -9,6 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const ContextProvider = ({ children }) => {
@@ -39,8 +40,14 @@ const ContextProvider = ({ children }) => {
   // on auth state change
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
+      setUser(currentUser);
+      if (currentUser?.email) {
+        const email = { email: currentUser?.email };
+        axios
+          .post("https://portfolio-server-ten-plum.vercel.app/jwt", email, {
+            withCredentials: true,
+          })
+          .then((res) => console.log(res.data));
         console.log(currentUser);
         setLoading(false);
       } else {
