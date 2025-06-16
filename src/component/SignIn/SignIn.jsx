@@ -9,7 +9,8 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 const SignIn = () => {
   const [eye, setEye] = useState(false);
   const navigate = useNavigate();
-  const { singInUser, successToast, errorToast } = useContext(AuthContext);
+  const { singInUser, successToast, errorToast, googleSignIn } =
+    useContext(AuthContext);
   const location = useLocation();
   const {
     register,
@@ -30,6 +31,18 @@ const SignIn = () => {
         errorToast("Email or Password is wrong");
       });
     reset();
+  };
+
+  // handleGoogleSignIn
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        successToast("Successfully Login");
+        navigate(location.state || "/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleEye = () => {
@@ -129,6 +142,7 @@ const SignIn = () => {
           <div className="flex flex-col gap-3">
             <button
               type="button"
+              onClick={handleGoogleSignIn}
               className="btn text-[#7cf03d] border-[#7cf03d] text-[16px] font-semibold hover:shadow-[0_0_10px_#7cf03d] bg-transparent hover:bg-transparent hover:scale-105 w-full flex items-center gap-3 justify-center"
             >
               <FcGoogle className="text-xl" />

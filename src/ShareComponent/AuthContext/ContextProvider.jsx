@@ -29,7 +29,7 @@ const ContextProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const googleSignIn = () => {
     setLoading(true);
-    return signInWithPopup(authInfo, googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
   // logOut
   const logOut = () => {
@@ -48,7 +48,6 @@ const ContextProvider = ({ children }) => {
             withCredentials: true,
           })
           .then((res) => console.log(res.data));
-        console.log(currentUser);
         setLoading(false);
       } else {
         setLoading(false);
