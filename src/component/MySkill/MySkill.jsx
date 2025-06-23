@@ -54,36 +54,36 @@ const MySkill = () => {
       </marquee> */}
 
         {/* skill show  */}
-        <Marquee
-          speed={80}
-          direction="right"
-          pauseOnHover="true"
-          className="w-full mt-5"
-        >
-          <div className="flex gap-5 w-full">
-            {/* HTML */}
-            <SkillCard logo={FaHtml5} title={"HTML"} rating={9} />
-            {/* CSS3 */}
-            <SkillCard logo={FaCss3} title={"CSS3"} rating={9.5} />
 
-            {/* JavaScript */}
-            <SkillCard logo={FaJsSquare} title={"JS"} rating={8} />
-            {/* Firebase */}
-            <SkillCard logo={FaJsSquare} title={"CSS3"} rating={8} />
-            <div className="card  bg-base-100 w-full md:w-96 shadow-xl mr-5">
-              <figure className="flex-1 px-10 pt-10">
-                <img
-                  src={express}
-                  className="text-green-500 w-24 h-24"
-                  alt="Express.js Logo"
-                />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">Express.js</h2>
+        <div className="flex gap-5 w-full">
+          {/* HTML */}
+          <SkillCard logo={FaHtml5} title={"HTML"} rating={9} />
+          {/* CSS3 */}
+          <SkillCard logo={FaJsSquare} title={"CSS3"} rating={9.5} />
+
+          {/* JavaScript
+          <SkillCard logo={FaJsSquare} title={"JS"} rating={8} />
+          {/* Firebase */}
+          {/* <SkillCard logo={FaJsSquare} title={"CSS3"} rating={8} /> */}
+          <div className="flex flex-col gap-4 justify-center items-center  bg-[rgb(4_4_2/57%)] border-[1px] border-brand  w-full md:w-96 shadow-xl p-2 rounded-2xl">
+            <figure className=" mt-10">
+              <img
+                src={express}
+                className="text-green-500 w-10 h-10"
+                alt="Express.js Logo"
+              />
+            </figure>
+            <div className="flex flex-col gap-4 justify-center items-center w-full text-center">
+              <h2 className="card-title">Express.js</h2>
+              <div className="w-full bg-red-400 h-2 rounded-full shadow-inner">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500"
+                  style={{ width: `[50%]` }}
+                ></div>
               </div>
             </div>
           </div>
-        </Marquee>
+        </div>
       </Container>
     </section>
   );
